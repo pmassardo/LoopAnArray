@@ -41,8 +41,8 @@ namespace LoopAnArray
             int numberToStop = 0;       // Variable to hold the number to stop at, input by user
 
             string messageArrayStart = "Please enter an array start number\n\t(between {0:n0} and {1:n0}): "; //Variable to hold the starting message.
-            string messageArrayEnd = "Please enter an array end number\n\t(between {0:n0} and {1:n0}).\n\t And not equal to or less than the start number {2:n0}: "; //Variable to hold the ending message.
-            string messageArrayStop = "Please enter an array stop number\n\t(between {0:n0} and {1:n0}).\n\t And not equal to or less than the start number {2:n0}.\n\t And not equal to or greater than the end number {3:n0}: "; //Variable to hold the ending message.
+            string messageArrayEnd = "Please enter an array end number\n\t(between {0:n0} and {1:n0}).\n\t And not less than the start number {2:n0}: "; //Variable to hold the ending message.
+            string messageArrayStop = "Please enter an array stop number\n\t(between {0:n0} and {1:n0}).\n\t And not equal to or less than the start number {2:n0}.\n\t And not greater than the end number {3:n0}: "; //Variable to hold the ending message.
             string messageOutput = string.Empty;
 
             ///////////////
@@ -116,8 +116,8 @@ namespace LoopAnArray
             while ((!(Int32.TryParse(Console.ReadLine(), out numberToStop)))     // check that the input is an integer
                     || ((numberToStop < numberMinimum)                           // compare the input against the minimum constant
                     || (numberToStop > numberMaximum)                            // compare the input against the maximum constant
-                    || (numberToStop <= numberToStart)
-                    || (numberToStop >= numberToEnd)
+                    || (numberToStop < numberToStart)
+                    || (numberToStop > numberToEnd)
                     ));                        // compare the input against the start number constant
 
             ///////////////
@@ -139,6 +139,7 @@ namespace LoopAnArray
             // Loop through the array
             // as long as the indexBuildArray is less than the
             // length of the array, the loop will continue
+            // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/while
             while (indexBuildArray < arrayLength)
             {
 
@@ -148,6 +149,7 @@ namespace LoopAnArray
                 // into the current element of the array
                 arrayNumbers[indexBuildArray] = (numberToStart + indexBuildArray);
 
+                // You can also put the incrementor here, it may be easier to read
                 // increment the index, so you do not end up with 
                 // to move to the next element of the array 
                 // and avoid an endless loop. 
@@ -164,6 +166,7 @@ namespace LoopAnArray
             // initializing the incrementor (index) to 0 which is the first element of the array (int index = 0)
             // keep looping while the index is less than the length of the array (index < arrayNumbers.Length)
             // keep incrementing the incrementor/index by one for every loop (index++)
+            // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/for
             for (int index = 0; index < arrayNumbers.Length; index++)
             {
                 // concatinate the message
