@@ -177,6 +177,7 @@ namespace LoopAnArray
                 // at (numberToStop),
                 // then set the index to the length
                 // of the array to stop the loop.
+                // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/if-else
                 if (arrayNumbers[index] == numberToStop)
                 {
                     // Set the index to be equal to 
