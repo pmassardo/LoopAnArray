@@ -120,45 +120,75 @@ namespace LoopAnArray
                     || (numberToStop >= numberToEnd)
                     ));                        // compare the input against the start number constant
 
+            ///////////////
+            // Processing
+            ///////////////
+
+            // Determine the Array Length by subtracting the number start an end points 
+            // that the user input.
             arrayLength = ((1 + numberToEnd) - numberToStart);
 
-            // Build the array
-
+            // Create the array
             int[] arrayNumbers = new int[arrayLength];
 
-            // change the scope of the program
-            // by changing the scope we can use the
-
+            // declare an initialize a new variable
+            // to be used as the array index
             int indexBuildArray = 0;
 
+            // Loop through the array
+            // as long as the indexBuildArray is less than the
+            // length of the array, the loop will continue
             while (indexBuildArray < arrayLength)
             {
 
+                // for the current index that the indexBuildArray sets the
+                // array to...
+                // add the indexBuildArray to the numberToStart and put the result
+                // into the current element of the array
                 arrayNumbers[indexBuildArray] = (numberToStart + indexBuildArray);
+
+                // increment the index, so you do not end up with 
+                // to move to the next element of the array 
+                // and avoid an endless loop. 
                 indexBuildArray++;
 
             }
 
-            
+            ///////////////
+            // Output
+            /////////////// 
 
             // build the output message
-
+            // loop through the array by
+            // initializing the incrementor (index) to 0 which is the first element of the array (int index = 0)
+            // keep looping while the index is less than the length of the array (index < arrayNumbers.Length)
+            // keep incrementing the incrementor/index by one for every loop (index++)
             for (int index = 0; index < arrayNumbers.Length; index++)
             {
-
+                // concatinate the message
                 messageOutput += "\nIndex " + index.ToString("n0") + "  holds the value " + arrayNumbers[index] + ".";
 
+                // if the current element has a number that is
+                // equal to the number the user input to stop 
+                // at (numberToStop),
+                // then set the index to the length
+                // of the array to stop the loop.
                 if (arrayNumbers[index] == numberToStop)
                 {
+                    // Set the index to be equal to 
+                    // the size of the array, which is
+                    // greater than index < arrayNumbers.Length
+                    // so the loop will stop naturally.
                     index = arrayNumbers.Length;
                 }
 
             }
 
+            // Show the user the final message
             Console.Write(messageOutput);
 
            // Ask the user to press any key to end the program
-           // \n - use the newlijne escape character to move the output to the next line.
+           // \n - use the newline escape character to move the output to the next line.
            Console.Write("\nPress any key to end this application...");
 
             // Use the Console ReadKey to pause the program until the user presses any key
