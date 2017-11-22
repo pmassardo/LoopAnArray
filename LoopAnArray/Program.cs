@@ -1,5 +1,5 @@
 ﻿/* 
- * Program Name:    TaxCalculator
+ * Program Name:    Loop An Array
  * Author:          Alfred Massardo
  * Date:            November 13, 2017
  * 
@@ -27,8 +27,8 @@ namespace LoopAnArray
             ///////////////
 
             // Income threshold levels
-            const int numberMinimum = 1;                // Constant that holds the prime minimum
-            const int numberMaximum = 10000;            // Constant that holds the prime minimum
+            const int numberMinimum = 1;                // Constant that holds the array size minimum
+            const int numberMaximum = 10000;            // Constant that holds the array size minimum
             const string messageError = "\nError!\n";   // Constant that holds the error portion of the message
 
             ///////////////
@@ -36,8 +36,8 @@ namespace LoopAnArray
             ///////////////
 
             int numberToStart = 0;      // Variable to hold the number to start at, input by user
-            int numberToEnd = 0;        // Variable to hold the array size, input by user
-            int arrayLength = 0;
+            int numberToEnd = 0;        // Variable to hold the number to end at, input by user
+            int arrayLength = 0;        // Variable to hold the array size, input by user
             int numberToStop = 0;       // Variable to hold the number to stop at, input by user
 
             string messageArrayStart = "Please enter an array start number\n\t(between {0:n0} and {1:n0}): "; //Variable to hold the starting message.
