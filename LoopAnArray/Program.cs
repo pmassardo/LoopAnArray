@@ -129,6 +129,7 @@ namespace LoopAnArray
             arrayLength = ((1 + numberToEnd) - numberToStart);
 
             // Create the array
+            // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/
             int[] arrayNumbers = new int[arrayLength];
 
             // declare an initialize a new variable
@@ -187,9 +188,9 @@ namespace LoopAnArray
             // Show the user the final message
             Console.Write(messageOutput);
 
-           // Ask the user to press any key to end the program
-           // \n - use the newline escape character to move the output to the next line.
-           Console.Write("\nPress any key to end this application...");
+            // Ask the user to press any key to end the program
+            // \n - use the newline escape character to move the output to the next line.
+            Console.Write("\nPress any key to end this application...");
 
             // Use the Console ReadKey to pause the program until the user presses any key
             // to end the application.
